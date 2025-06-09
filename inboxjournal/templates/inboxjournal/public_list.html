@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Public Journal Entries{% endblock %}
+{% block content %}
+<h2>Public Journal Entries</h2>
+<ul>
+    {% for entry in entries %}
+        <li>
+            <strong>{{ entry.sender_email }}</strong><br>
+            <p class="card-text">{{ entry.content|truncatechars:150 }}</p><br>
+            <h5 class="card-title">{{ entry.created_at|date:"F j, Y, g:i a" }}</h5>
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'journal_detail' entry.id %}">View</a>
+        </li>
+    {% empty %}
+        <li>No public journal entries found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

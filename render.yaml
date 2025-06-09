@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: Revnal
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn Revnal.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: False
+
+    deploy:
+      - command: python manage.py collectstatic --noinput
+      - command: python manage.py makemigrations
+      - command: python manage.py migrate

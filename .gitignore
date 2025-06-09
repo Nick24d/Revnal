@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Django
+db.sqlite3
+*.sqlite3
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+.venv/
+env/
+venv/
+ENV/
+*.env
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media & static files
+/media/
+/staticfiles/
+
+# Ngrok
+ngrok.log
+
+# Migrations (optional – useful during early dev)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Node (if using npm/yarn for frontend)
+node_modules/

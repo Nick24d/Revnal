@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Your Journal{% endblock %}
+{% block content %}
+    <h2>Your Journal Entries</h2>
+    {% if page_obj.object_list %}
+        <ul>
+            {% for entry in page_obj %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <li>
+                            <strong>{{ entry.subject }}</strong><br>
+                            <h5 class="card-title">{{ entry.created_at|date:"F j, Y, g:i a" }}</h5>
+                            <p class="card-text">{{ entry.content|truncatechars:150 }}</p>
+                            <a href="{% url 'journal_detail' entry.id %}" class="btn btn-outline-primary btn-sm">View</a>
+                        </li>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No journal entries found.</p>
+            {% endfor %}
+    {% endif %}
+{% endblock %}
