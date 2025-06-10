@@ -22,6 +22,9 @@ Try the live app here:
 - For **public journals**, do **not** include a PIN.
 - Submissions without the correct PIN format for private journals won’t be accessible.
 
+for further clarification visit the site below:
+
+https://dev.to/dominion_okorie_d7842f7ca/revnal-52g
 ---
 
 ## Code Repository
